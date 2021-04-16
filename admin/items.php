@@ -19,7 +19,7 @@ if(!$_SESSION['admin_username'])
 		$stmt_select = $DB_con->prepare('SELECT item_image FROM items WHERE item_id =:item_id');
 		$stmt_select->execute(array(':item_id'=>$_GET['delete_id']));
 		$imgRow=$stmt_select->fetch(PDO::FETCH_ASSOC);
-		unlink("img/".$imgRow['item_image']);
+		unlink('../img/'.$imgRow['item_image']);
 		
 	
 		$stmt_delete = $DB_con->prepare('DELETE FROM items WHERE item_id =:item_id');
@@ -38,22 +38,32 @@ if(!$_SESSION['admin_username'])
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-BAZZAR | Dashboard</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Ballet&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;1,700&family=Ballet&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	  <script src="js/datatables.min.js"></script>
-
    
-    
+   <style type="text/css">
+     
+*{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  height: auto;
+}
+
+   </style>
+
 </head>
 <body>
     <div id="wrapper">
         <div class="navbar">
               <div class="logo">
-          <a class = "logo" href="dashboard.php"><img src="img/logo1.png" width="200px"></a> 
+           <a class = "logo" href="dashboard.php" style="font-family: serif; font-weight: bold; font-size: 40px;">E-BAZZAR</a> 
         </div>
                 <nav>
         
@@ -72,16 +82,7 @@ if(!$_SESSION['admin_username'])
             </div>
 
         <div id="page-wrapper">
-            
-			
-			
-			
-			
-			
-			
-			
-			
-	
+         
 			 <div class="alert alert-danger">
                         
                           <center> <h3><strong>Item Management</strong> </h3></center>
@@ -90,18 +91,19 @@ if(!$_SESSION['admin_username'])
 						  
 						  <br />
 						  
-						  <div class="table-responsive">
-            <table class="display table table-bordered" id="example" cellspacing="0" width="100%">
+						  <div>
+            <table cellspacing="0">
               <thead>
-                <tr>
-                  <th>Image</th>
-                  <th>Name of Item</th>
-				  <th>Price</th>
-				  <th>Date Added</th>
-                  <th>Actions</th>
+                <tr >
+                  <th style="background: #03a9f4;"><center>Image</center></th>
+                  <th style="background: #03a9f4;">Name of Item</th>
+				          <th style="background: #03a9f4;">Price</th>
+				          <th style="background: #03a9f4;">Date Added</th>
+                  <th style="background: #03a9f4;"><center>Actions</center></th>
                  
                 </tr>
               </thead>
+
               <tbody>
 			  <?php
 include("config.php");
@@ -116,23 +118,34 @@ include("config.php");
 			
 			
 			?>
+
                 <tr>
                   <td>
-				<center> <img src="item_images/<?php echo $item_image; ?>" class="img img-rounded"  width="50" height="50" /></center>
+        <center>
+				 <img src="../img/"<?php echo $item_image; ?>  />
+        </center>
 				 </td>
-                 <td><?php echo $item_name; ?></td>
-				 <td>&#8369; <?php echo $item_price; ?></td>
+
+         <center>
+         <td><?php echo $item_name; ?></td>
+         </center>
+
+         <center>
+				 <td>$<?php echo $item_price; ?></td>
+        </center>
+
+        <center>
 				 <td><?php echo $item_date; ?></td>
+        </center>
 				 
-				 <td>
+
+         <center>
+				 <td >
+				 <a style=" margin: 20PX; border: 1px solid #03a9f4; color: #03a9f4; background: transparent; border-radius: 20px; font-size: 25px; padding: 10px;  "href="edititem.php?edit_id=<?php echo $row['item_id']; ?>" title="click for edit" >Edit Item</a> 
 				
-				 
-				
-				 <a class="btn btn-info" href="edititem.php?edit_id=<?php echo $row['item_id']; ?>" title="click for edit" onclick="return confirm('Are you sure edit this item?')"><span class='glyphicon glyphicon-pencil'></span> Edit Item</a> 
-				
-                  <a class="btn btn-danger" href="?delete_id=<?php echo $row['item_id']; ?>" title="click for delete" onclick="return confirm('Are you sure to remove this item?')"><span class='glyphicon glyphicon-trash'></span> Remove Item</a>
-				
-                  </td>
+                  <a style="margin: 20PX; border: 1px solid #03a9f4; color: #03a9f4; background: transparent; border-radius: 20px; font-size: 25px; padding: 10px; "href="?delete_id=<?php echo $row['item_id']; ?>" title="click for delete" onclick="return confirm('Are you sure to remove this item?')"><span class='glyphicon glyphicon-trash'></span> Remove Item</a>
+				</center>
+        </td>
                 </tr>
                
               <?php
@@ -152,8 +165,8 @@ include("config.php");
 		
 
 			
-        <div class="col-xs-12">
-        	<div class="alert alert-warning">
+        <div>
+        	<div>
             	<span class="glyphicon glyphicon-info-sign"></span> &nbsp; No Data Found ...
             </div>
         </div>
@@ -162,63 +175,6 @@ include("config.php");
 	
 ?>
 
-<!-- footer -->
-    <footer>
-         <div class="small-container-f">
-              <div class="row">
-                  <div class="footer-col" >
-                      <h2 style="text-align: center; margin-top: 40px;">Download our app</h2>
-                      <p class="footer-p" style="text-align: center; margin-top: 5px;">Download our app on Play Store and Google Play </p>
-                      <img src="img/app-store.png" class="footer-img" >
-                      <img src="img/play.png" class="footer-img">
-                  </div>
-                  <div class="footer-col">
-                      <br> <br>
-                   <h1 style="font-family: serif; font-size: 60px; color: rgb(204, 201, 201);">E-BAZZAR</h1>
-                    <p class="footer-p">our purpose is to provide sustainable and astetic products<br> for nature lovers worldwide</p>
-                </div>
-                <div class="follow">
-                    <br>
-                    <br>
-                    <h2 style="text-align: center;">Follow us</h2>
-                    <img class="footer-p" src="img/facebook_white.png">
-                    <img class="footer-p" src="img/twitter_white.png">
-                    <img class="footer-p" src="img/instagram_white.png">
-                </div>
-              </div>
-               <div class="copyright text-center bg-dark text-white py-2" style="margin: 10px;">
-                    <p class="footer-Copyright-msg">&copy; Copyrights 2021. Desing By E-Bazzar</p>
-                </div>
-         </div>
-    </footer>
-		
 
-<script type="text/javascript" charset="utf-8">
-	$(document).ready(function() {
-	  $('#example').dataTable();
-	});
-    </script>
-		
-	  	  <script>
-   
-    $(document).ready(function() {
-        $('#priceinput').keypress(function (event) {
-            return isNumber(event, this)
-        });
-    });
-  
-    function isNumber(evt, element) {
-
-        var charCode = (evt.which) ? evt.which : event.keyCode
-
-        if (
-            (charCode != 45 || $(element).val().indexOf('-') != -1) &&      
-            (charCode != 46 || $(element).val().indexOf('.') != -1) &&      
-            (charCode < 48 || charCode > 57))
-            return false;
-
-        return true;
-    }    
-</script>
 </body>
 </html>

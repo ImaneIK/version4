@@ -78,42 +78,78 @@ if(!$_SESSION['user_email'])
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products-delails-page E_bazzar| Ecommerce Website Design</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Ballet&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;1,700&family=Ballet&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+     <style type="text/css">
+    *{
+            padding: 0;
+            margin: 0;
+            
+        }
+
+        body{
+            height: auto;
+        }
+
+
+        table{
+            height: 30vh;
+            margin: 50px;
+            padding: 30px;
+        }
+
+        table tr th{
+            background: #03a9f4;
+        }
+
+
+        .button{
+            margin-right: 30%;
+            padding: 5px;
+            font-size: 17px;
+            background: transparent;
+            border: 2px solid #03a9f4;
+            border-radius: 20px;
+            color: #03a9f4;
+        }
+
+</style>
+
+
 </head>
+
+
 
 <body class="Cart-Page">
 
 
-	<div class="navbar">
+	 <div class="navbar">
               <div class="logo">
-					<a class = "logo" href="home.php"><img src="img/logo1.png" width="200px"></a> 
-				</div>
+                    <a class = "logo" href="home.php" style="font-family: serif; font-weight: bold; font-size: 40px;">E-BAZZAR</a> 
+                </div>
                 <nav>
-				
+                
                     <ul>
                         <li><a href="home.php">Home</a></li>
-                        <li><a href="product.php">Products</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Account</a></li>
+                        <li><a href="products.php">Products</a></li>
+                        <li><a href="Cart.php">Cart</a></li>
                         <li><a href="logout.php">Log Out</a></li>
-                        
                         
                     </ul>
                     
                 </nav>
-              <a href="Cart.php"><img src="img/cart.png" width="29px" height="29px" class="cart"></a>
+             
             </div>
 
-        <div class="container">
-            
-        </div>
+        
         <!---cart items details--->
-        <div class="small-container cart-page">
+        <div>
             <table>
                 <tr>
                     <th>Product</th>
@@ -143,9 +179,9 @@ include("config.php");
                 <tr>
                   
                  <td><?php echo $order_name; ?></td>
-                 <td>&#8369; <?php echo $order_price; ?> </td>
+                 <td><?php echo $order_price; ?>$ </td>
                  <td><?php echo $order_quantity; ?></td>
-                 <td>&#8369; <?php echo $order_total; ?> </td>
+                 <td><?php echo $order_total; ?>$ </td>
                  
                  <td>
                 
@@ -153,7 +189,7 @@ include("config.php");
                 
                 
                 
-                  <a class="btn btn-block btn-danger" href="?delete_id=<?php echo $row['order_id']; ?>" title="click for delete" onclick="return confirm('Are you sure to remove this item?')"><span class='glyphicon glyphicon-trash'></span> Remove Item</a>
+                  <a class = 'button' href="?delete_id=<?php echo $row['order_id']; ?>" title="click for delete" onclick="return confirm('Are you sure to remove this item?')">Remove Item</a>
                 
                   </td>
                 </tr>
@@ -171,11 +207,11 @@ include("config.php");
         echo "<td colspan='3' align='right'>Total Price:";
         echo "</td>";
         
-        echo "<td>&#8369; ".$totalx;
+        echo "<td> ".$totalx.'$';
         echo "</td>";
         
         echo "<td>";
-        echo "<a class='btn btn-block btn-success' href='?update_id=".$user_id."' ><span class='glyphicon glyphicon-shopping-cart'></span> Order Now!</a>";
+        echo "<a class = 'button' href='?update_id=".$user_id."' > Order Now!</a>";
         echo "</td>";
         
         echo "</tr>";
@@ -197,7 +233,6 @@ include("config.php");
     else
     {
         ?>
-        
             
         <div class="col-xs-12">
             <div class="alert alert-warning">
@@ -208,13 +243,10 @@ include("config.php");
     }
     
 ?>
-
         </div>
-
-
-
         </div>
-        <!-----footer---->
+        
+   <!-----footer---->
                <footer>
          <div class="small-container-f">
               <div class="row">
@@ -243,6 +275,5 @@ include("config.php");
                 </div>
          </div>
     </footer>
-   
         </body>
 </html>

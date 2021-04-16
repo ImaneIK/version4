@@ -9,15 +9,17 @@ session_start();
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-BAZZAR | Ecommerce Website Design</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Ballet&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;1,700&family=Ballet&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+
 </head>
 
 
@@ -30,13 +32,13 @@ session_start();
        
             <div class="navbar">
               <div class="logo">
-          <a class = "logo" href="index.php"><img src="img/logo1.png" width="200px"></a> 
+          <a class = "logo" href="index.php" style="font-family: serif; font-weight: bold; font-size: 40px;">E-BAZZAR</a> 
         </div>
                 <nav>
         
                     <ul>
                         <li><a href="index.php">Home</a></li>
-                        <li><a href="product.php">Product</a></li>
+                        <li><a href="products.php">Products</a></li>
                         <li><a href="Account-page1.php ">Contact</a></li>
                        
                         
@@ -46,21 +48,15 @@ session_start();
               
             </div>
 
-
-
-
-
-
-
              <div class="container">
             <!-- image slider here -->
             <div class="row">
                 <div class="col-2">
-                    <h1>  -Index page- <br> A Journey to discover the treasures of a deep rooted culture...
-                        <br>Morocco</h1>
+                    <h1>A Journey to discover the treasures of a deep rooted culture...
+                        Morocco</h1>
                     <P>E-BAZZAR<br>An online shopping plateform that provides<br> traditional natural and 100% original Products from all over Morocco....</P>
                     
-                  <!--  <a href="" class="btn">Let's dive in &#8594; </a>-->
+                  <a href="#products" class="btn">Let's dive in &#8594; </a>
                 </div>
                 
                 <div class="col-2">
@@ -70,7 +66,6 @@ session_start();
             </div>
         </div>
     </div>
-
 
 
 
@@ -95,7 +90,7 @@ session_start();
                     <img src="img/accessories.jpg" alt="">
                 </div>
                 <div class="col-3">
-                    <h4>Decor</h4>
+                    <h4>Interior Design</h4>
                     <img src="img/decor.jpg" alt="">
                 </div>
                  <div class="col-3">
@@ -120,7 +115,7 @@ session_start();
 
 
     <!----featured products-->
-    <div class="small-container">
+    <div class="small-container" id = "products">
         <h2 class="title">Featured products</h2>
         <div class="row">
             <div class="col-4">
@@ -399,8 +394,8 @@ session_start();
                   <div class="footer-col" >
                       <h2 style="text-align: center; margin-top: 40px;">Download our app</h2>
                       <p class="footer-p" style="text-align: center; margin-top: 5px;">Download our app on Play Store and Google Play </p>
-                      <img src="img/app-store.png" class="footer-img" >
-                      <img src="img/play.png" class="footer-img">
+                      <img src="footage/app-store.png" class="footer-img" >
+                      <img src="footage/play.png" class="footer-img">
                   </div>
                   <div class="footer-col">
                       <br> <br>
@@ -411,9 +406,9 @@ session_start();
                     <br>
                     <br>
                     <h2 style="text-align: center;">Follow us</h2>
-                    <img class="footer-p" src="img/facebook_white.png">
-                    <img class="footer-p" src="img/twitter_white.png">
-                    <img class="footer-p" src="img/instagram_white.png">
+                    <img class="footer-p" src="footage/facebook_white.png">
+                    <img class="footer-p" src="footage/twitter_white.png">
+                    <img class="footer-p" src="footage/instagram_white.png">
                 </div>
               </div>
                <div class="copyright text-center bg-dark text-white py-2" style="margin: 10px;">
@@ -421,6 +416,8 @@ session_start();
                 </div>
          </div>
     </footer>
+
+    <script type="text/javascript" src="button_script.js"></script>
 
 </body>
 

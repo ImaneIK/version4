@@ -40,18 +40,45 @@ if(!$_SESSION['admin_username'])
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-BAZZAR</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Ballet&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;1,700&family=Ballet&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	
+	<style type="text/css">
+	*{
+    		padding: 0;
+    		margin: 0;
+    		
+    	}
+
+    	body{
+    		height: auto;
+    	}
+
+    	table thead tr th{
+    		background: #03a9f4;
+    	}
+
+
+    	.button{
+    		margin: 10px;
+    		padding: 5px;
+    		font-size: 17px;
+    		background: transparent;
+    		border: 2px solid #03a9f4;
+    		border-radius: 20px;
+    		color: #03a9f4;
+    	}
+
+</style>	
 </head>
 <body>
     <div id="wrapper">
-        <div class="navbar">
+         <div class="navbar">
               <div class="logo">
-          <a class = "logo" href="dashboard.php"><img src="img/logo1.png" width="200px"></a> 
+           <a class = "logo" href="dashboard.php" style="font-family: serif; font-weight: bold; font-size: 40px;">E-BAZZAR</a> 
         </div>
                 <nav>
         
@@ -94,6 +121,7 @@ if(!$_SESSION['admin_username'])
                 </tr>
               </thead>
               <tbody>
+
 			  <?php
 include("config.php");
 	$stmt = $DB_con->prepare("SELECT * FROM orderdetails where user_id='$user_id' and order_status='Ordered_Finished'");
@@ -110,10 +138,10 @@ include("config.php");
                 <tr>
                   
                  <td><?php echo $order_name; ?></td>
-				 <td>&#8369; <?php echo $order_price; ?> </td>
+				 <td><?php echo $order_price; ?>$</td>
 				 <td><?php echo $order_quantity; ?></td>
-				 <td>&#8369; <?php echo $order_total; ?></td>
-				  <td><?php echo $order_date; ?></td>
+				 <td><?php echo $order_total; ?>$</td>
+				 <td><?php echo $order_date; ?></td>
 				 
 				 
                 </tr>
@@ -121,10 +149,10 @@ include("config.php");
               <?php
 		}
 		echo "<tr>";
-		echo "<td colspan='4' align='center' style='font-size:18px;'>"."Customer Name: <span style='color:red;'>".$user_firstname." ".$user_lastname."</span> | "."Email: <span style='color:red;'>".$user_email."</span> | "."Address: <span style='color:red;'>".$user_address." </span>";
+		echo "<td colspan='4' align='center' >"."Customer Name: <span >".$user_firstname." ".$user_lastname."</span> | "."Email: <span >".$user_email."</span> | "."Address: ".$user_address." </span>";
 		echo "</td>";
 		
-		echo "<td>"."<a class='btn btn-danger' href='customers.php'><span class='glyphicon glyphicon-backward'></span> Back<a/>";
+		echo "<td>"."<a class = 'button' href='customers.php'>Back<a/>";
 		echo "</td>";
 		
 		echo "</td>";
@@ -151,9 +179,7 @@ include("config.php");
 		
 	</div>
 	
-	
-
-	
+	<!--
 	  	  <script>
    
     $(document).ready(function() {
@@ -174,6 +200,6 @@ include("config.php");
 
         return true;
     }    
-</script>
+</script> -->
 </body>
 </html>

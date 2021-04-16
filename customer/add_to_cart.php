@@ -62,50 +62,87 @@ if(!$_SESSION['user_email'])
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-BAZZAR</title>
+     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Ballet&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;1,700&family=Ballet&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+     <style type="text/css">
+    *{
+            padding: 0;
+            margin: 0;
+            
+        }
+
+        body{
+            height: 100%;
+        }
+
+
+        table{
+          
+            margin: 50px;
+            padding: 30px;
+        }
+
+        table tr th{
+            background: #03a9f4;
+        }
+
+
+        .button{
+        	width: 60px;
+        	height: 50px;
+            margin: 10px;
+            padding: 8px;
+            font-size: 17px;
+            background: transparent;
+            border: 2px solid #03a9f4;
+            border-radius: 20px;
+            color: #03a9f4;
+        }
+
+        form{
+        	width: 80%;
+        	height:30vh;
+        }
+
+</style>
+    
+
 </head>
 
    
     
 </head>
 <body>
-    <div class="header">
        
+
             <div class="navbar">
               <div class="logo">
-					<a class = "logo" href="home.php"><img src="img/logo1.png" width="200px"></a> 
+					<a class = "logo" href="home.php" style="font-family: serif; font-weight: bold; font-size: 40px;">E-BAZZAR</a> 
 				</div>
                 <nav>
 				
                     <ul>
                         <li><a href="home.php">Home</a></li>
                         <li><a href="products.php">Products</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Account</a></li>
+                        <li><a href="Cart.php">Cart</a></li>
                         <li><a href="logout.php">Log Out</a></li>
                         
                     </ul>
                     
                 </nav>
-              <a href="add_to_cart.php"><img src="img/cart.png" width="29px" height="29px" class="cart"></a>
-            </div>
-
-
     </div>
+
+
 
         <div id="page-wrapper">
             
-	
-			
-					
-					
-					
-					
+			<center>
  <form role="form" method="post" action="save_order.php">
 	
     
@@ -117,21 +154,21 @@ if(!$_SESSION['user_email'])
 	}
 	?>
    
-    <div class="alert alert-default" style="color:white;background-color:#008CBA">
-         <center><h3> <span class="glyphicon glyphicon-info-sign"></span> Order Details</h3></center>
+    <div>
+         <center><h3>Order Details</h3></center>
         </div>
 		
-		 <td><input class="form-control" type="hidden" name="order_name" value="<?php echo $item_name; ?>" /></td>
-		<td><input class="form-control" type="hidden" name="order_price" value="<?php echo $item_price; ?>" /></td>
-		<td><input class="form-control" type="hidden" name="user_id" value="<?php echo $user_id; ?>" /></td>
+		 <td><input  type="hidden" name="order_name" value="<?php echo $item_name; ?>" /></td>
+		<td><input  type="hidden" name="order_price" value="<?php echo $item_price; ?>" /></td>
+		<td><input  type="hidden" name="user_id" value="<?php echo $user_id; ?>" /></td>
 		
-	<table class="table table-bordered table-responsive">
+	<table>
 	 
 	
 	 
     <tr>
-    	<td><label class="control-label">Name of Item.</label></td>
-        <td><input class="form-control" type="text" name="v1" value="<?php $item_name="";  echo $item_name;  ?>" disabled/></td>
+    	<td><label >Name of Item:</label></td>
+        <td><input type="text" name="v1" value="<?php $item_name="";  echo $item_name;  ?>" disabled/></td>
 		
 		
 		
@@ -140,22 +177,22 @@ if(!$_SESSION['user_email'])
     
 
 	 <tr>
-    	<td><label class="control-label">Price.</label></td>
-        <td><input class="form-control" type="text" name="v2" value="<?php $item_price=0;  echo $item_price; ?>" disabled/></td>
+    	<td><label >Price:</label></td>
+        <td><input type="text" name="v2" value="<?php $item_price=0;  echo $item_price; ?>" disabled/></td>
     </tr>
 	
 	
 	
     <tr>
-    	<td><label class="control-label">Image.</label></td>
+    	<td><label >Image:</label></td>
         <td>
-        	<p><img class="img img-thumbnail" src="../Admin/item_images/<?php echo $item_image; ?>" style="height:250px;width:350px;" /></p>
+        	<p> <center><img src="../img/<?php echo $item_image; ?>" style="height:250px;width:350px;" /></center></p>
         	
         </td>
 		
 		 <tr>
-    	<td><label class="control-label">Quantity.</label></td>
-        <td><input class="form-control" type="text" placeholder="Quantity" name="order_quantity" value="1" onkeypress="return isNumber(event)" onpaste="return false"  required />
+    	<td><label >Quantity:</label></td>
+        <td><input type="text" placeholder="Quantity" name="order_quantity" value="1" onkeypress="return isNumber(event)" onpaste="return false"  required />
 		
 			
 		
@@ -166,26 +203,26 @@ if(!$_SESSION['user_email'])
     </tr>
     
     <tr>
-        <td colspan="2"><button type="submit" name="order_save" class="btn btn-primary">
-        <span class="glyphicon glyphicon-shopping-cart"></span> OK
-        </button>
+
+        <td colspan="2">
+        	<center> <button class="button" type="submit" name="order_save">OK</button>
         
-        <a class="btn btn-danger" href="products.php?id=1"> <span class="glyphicon glyphicon-backward"></span> Cancel </a>
-        
+        <a class="button" href="products.php?id=1"> Cancel </a>
+        </center>
         </td>
     </tr>
     
     </table>
     
 </form>
-					
+		</center>			
 					
 					
 					
 					
 					<br />
 			
-			<div class="alert alert-default" style="background-color:#033c73;">
+			<div>
                        <p style="color:white;text-align:center;">
                        &copy E-BAZZAR shop| All Rights Reserved |  Design by E-BAZZAR
 

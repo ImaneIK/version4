@@ -24,7 +24,7 @@ $update_profile="update users set user_password='$user_password', user_firstname
     if(mysqli_query($dbcon,$update_profile))
     {
 	echo "<script>alert('Account successfully updated!')</script>";
-        echo"<script>window.open('home.php','_self')</script>";
+        echo"<script>window.open('customer/home.php','_self')</script>";
     }else{
 	echo "<script>alert('Error Found!')</script>";
 	

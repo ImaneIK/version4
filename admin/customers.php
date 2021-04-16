@@ -53,28 +53,53 @@ if(!$_SESSION['admin_username'])
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-BAZZAR</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Ballet&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;1,700&family=Ballet&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script src="js/datatables.min.js"></script>
+ <style type="text/css">
 
-   
+    	*{
+    		padding: 0;
+    		margin: 0;
+    		
+    	}
+
+    	body{
+    		height: auto;
+    	}
+
+    	table thead tr th{
+    		background: #03a9f4;
+    		margin-bottom: 10px;
+    	}
+
+
+    	.button{
+    		margin: 10px;
+    		padding: 5px;
+    		font-size: 17px;
+    		background: transparent;
+    		border: 2px solid #03a9f4;
+    		border-radius: 20px;
+    		color: #03a9f4;
+    	}
+</style>
     
 </head>
 <body>
     <div id="wrapper">
        
-       <div class="navbar">
+        <div class="navbar">
               <div class="logo">
-          <a class = "logo" href="dashboard.php"><img src="img/logo1.png" width="200px"></a> 
+           <a class = "logo" href="dashboard.php" style="font-family: serif; font-weight: bold; font-size: 40px;">E-BAZZAR</a> 
         </div>
                 <nav>
         
                     <ul>
-                        <li><a href="dashboard.php">Home</a></li>
+                         <li><a href="dashboard.php">Home</a></li>
                         <li><a href="additems.php">upload items</a></li>
                         <li><a href="items.php">item management</a></li>
                         <li><a href="customers.php ">customer management</a></li>
@@ -88,30 +113,29 @@ if(!$_SESSION['admin_username'])
             </div>
 
 
-        <div id="page-wrapper">
+        <div>
             
-			
-	
-			 <div class="alert alert-danger">
-                        
-                          <center> <h3><strong>Customer Management</strong> </h3></center>
+			<div >
+                 <center> <h3><strong>Customer Management</strong> </h3></center>	  
+			</div>
 						  
-						  </div>
+						  <br/>
 						  
-						  <br />
-						  
-						  <div class="table-responsive">
-            <table class="display table table-bordered" id="example" cellspacing="0" width="100%">
-              <thead>
+			<div>
+            <table cellspacing="0" width="100%">
+            <thead>
                 <tr>
                   <th>Customer Email</th>
                   <th>Name</th>
 				  <th>Address</th>
-                  <th>Actions</th>
-                 
+                  <th> <center>Actions </center></th>
+
+
                 </tr>
               </thead>
               <tbody>
+
+
 			  <?php
 include("config.php");
 	$stmt = $DB_con->prepare('SELECT * FROM users');
@@ -134,18 +158,17 @@ include("config.php");
 				 <td>
 				
 				 
-				
-				 <a class="btn btn-success" href="view_orders.php?view_id=<?php echo $row['user_id']; ?>"><span class='glyphicon glyphicon-shopping-cart'></span> View Orders</a> 
-				  <a class="btn btn-warning" href="?order_id=<?php echo $row['user_id']; ?>" title="click for delete" onclick="return confirm('Are you sure to reset the customer items ordered?')">
-				  <span class='glyphicon glyphicon-ban-circle'></span>
+				<center>
+				 <a class="button" href="view_orders.php?view_id=<?php echo $row['user_id']; ?>"> View Orders</a> 
+				 <a class = "button" href="?order_id=<?php echo $row['user_id']; ?>" title="click for delete" onclick="return confirm('Are you sure to reset the customer items ordered?')">
 				  Reset Order</a>
-				 <a class="btn btn-primary" href="previous_orders.php?previous_id=<?php echo $row['user_id']; ?>"><span class='glyphicon glyphicon-eye-open'></span> Previous Items Ordered</a> 
+
+				 <a  class="button" href="previous_orders.php?previous_id=<?php echo $row['user_id']; ?>">Previous Items Ordered</a> 
 				
 				
-                  <a class="btn btn-danger" href="?delete_id=<?php echo $row['user_id']; ?>" title="click for delete" onclick="return confirm('Are you sure to remove this customer?')">
-				  <span class='glyphicon glyphicon-trash'></span>
+                  <a   class="button" href="?delete_id=<?php echo $row['user_id']; ?>" title="click for delete" onclick="return confirm('Are you sure to remove this customer?')">
 				  Remove Account</a>
-				
+				</center>
                   </td>
                 </tr>
                
@@ -159,11 +182,10 @@ include("config.php");
 	else
 	{
 		?>
-		
-			
-        <div class="col-xs-12">
-        	<div class="alert alert-warning">
-            	<span class="glyphicon glyphicon-info-sign"></span> &nbsp; No Data Found ...
+	
+        <div>
+        	<div>
+            	 &nbsp; No Data Found ...
             </div>
         </div>
         <?php
@@ -172,8 +194,7 @@ include("config.php");
 ?>
 		
 	</div>
-	
-		
+	<!--
 		<script type="text/javascript" charset="utf-8">
 	$(document).ready(function() {
 	  $('#example').dataTable();
@@ -199,6 +220,6 @@ include("config.php");
 
         return true;
     }    
-</script>
+</script> -->
 </body>
 </html>

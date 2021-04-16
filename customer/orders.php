@@ -39,6 +39,7 @@ if(!$_SESSION['user_email'])
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-BAZZAR</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Ballet&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -48,23 +49,22 @@ if(!$_SESSION['user_email'])
 </head>
 <body>
     <div id="wrapper">
-        <div class="navbar">
+       <div class="navbar">
               <div class="logo">
-					<a class = "logo" href="home.php"><img src="img/logo1.png" width="200px"></a> 
+					<a class = "logo" href="home.php" style="font-family: serif; font-weight: bold; font-size: 40px;">E-BAZZAR</a> 
 				</div>
                 <nav>
 				
                     <ul>
                         <li><a href="home.php">Home</a></li>
                         <li><a href="products.php">Products</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Account</a></li>
+                        <li><a href="Cart.php">Cart</a></li>
                         <li><a href="logout.php">Log Out</a></li>
                         
                     </ul>
                     
                 </nav>
-              <a href="Cart.php"><img src="img/cart.png" width="29px" height="29px" class="cart"></a>
+             
             </div>
 
         <div id="page-wrapper">

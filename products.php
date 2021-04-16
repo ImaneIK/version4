@@ -50,21 +50,20 @@ session_start();
        
             <div class="navbar">
               <div class="logo">
-          <a class = "logo" href="home.php" style="font-family: serif; font-weight: bold; font-size: 40px;">E-BAZZAR</a> 
+          <a class = "logo" href="index.php" style="font-family: serif; font-weight: bold; font-size: 40px;">E-BAZZAR</a> 
         </div>
                 <nav>
         
                     <ul>
-                        <li><a href="home.php">Home</a></li>
+                        <li><a href="index.php">Home</a></li>
                         <li><a href="products.php">Products</a></li>
-                        <li><a href="Cart.php">Cart</a></li>
-                        <li><a href="logout.php">Log Out</a></li>
-                        
+                        <li><a href="Account-page1.php ">Contact</a></li>
                     </ul>
                     
                 </nav>
-             
-            </div>
+              
+            </div>     
+  
       
         <div id="page-wrapper">
 
@@ -108,11 +107,11 @@ echo "
     <div class='col-4'>
    
            
-            <img  href='../img/".$query2['item_image']."' title='Page ".$id."- ".$query2['item_name']."'/>
+            <img  href='img/".$query2['item_image']."' title='Page ".$id."- ".$query2['item_name']."'/>
 
                     
           
-          <img src='../img/".$query2['item_image']."' />
+          <img src='img/".$query2['item_image']."' />
           </a>
 
           <center>
@@ -123,7 +122,10 @@ echo "
 
                     </center>
 
-           <img  href='../img/".$query2['item_image']."' title='Page ".$id."- ".$query2['item_name']."'/>
+          <button onclick='myFunction()' id='btn' id = add_to_cart >Add to cart</button> ​ 
+          <script> function myFunction() { alert('sign in to order');
+          window.open('Account-page1.php','_self')}
+          </script>
                    
 
 
@@ -167,4 +169,4 @@ echo "</ul></center>";
                 </div>
     
 </body>
-</html>*/
+</html>

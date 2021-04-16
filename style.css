@@ -4,11 +4,12 @@
     box-sizing: border-box;
 }
 
+
 body {
     color: #333333;
     font-family: 'Amiri', serif;
     height: 3000px;
-        flex-basis: 25%;
+    flex-basis: 25%;
 }
 
 .header{
@@ -16,6 +17,7 @@ body {
     padding: 10px;
     background: radial-gradient(#FFFFFF, #99C8F4);
 }
+
 h1 {
     color: #4f506b;
     align-items: center;
@@ -53,154 +55,6 @@ a {
     text-decoration: none;
     color: #333333;
 }
-
-
-
-/*Authentification page--*/
-
-
-
-.banner{
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.hero{
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(footage\banner.jpg));
-    margin: 0 auto;
-    text-align: center;
-    background-position: center;
-    background-size: cover;
-    position: absolute;
-
-}
-
-
-
-.form-box{
-    width: 360px;
-    height: 550px;
-    position: relative;
-    margin: 6% auto;
-    opacity: 0.9;
-    background: #fff;
-    padding: 5px;
-    overflow: hidden;
-    border-radius: 32px;
-
-}
-
-.button-box{
-    width: 300px;
-    margin: 35px auto;
-    position: relative;
-    box-shadow: 0 0 20px 9px #ff61241f;
-    border-radius: 30px;
-}
-
-
-.toogle-btn{
-    padding: 10px 10px;
-    margin: 10px;
-    cursor: pointer;
-    background: transparent;
-    border: 0;
-    outline: none;
-    position: relative;
-}
-
-#btn{
-    top: 0;
-    left: 0;
-    position: absolute;
-    width: 30%;
-    height: 100%;
-    background: linear-gradient(to right, #0066cc, #99ccff);
-    border-radius: 32px;
-    transition: .5s;
-}
-
-
-.social-icons{
-    margin: 30px auto;
-    text-align: center;
-}
-
-.social-icons img{
-    width: 30px;
-    margin: 0 12px;
-    box-shadow: 0 0 20px #7f7f7f3d;
-    cursor: pointer;
-    border-radius: 50%;
-}
-
-.input-group {
-    top: 180px;
-    position: absolute;
-    width: 300px;
-    transition: .5s;
-}
-
-.input-feild{
-    width: 100%;
-    padding: 10px 0;
-    margin: 5px 0;
-    border-left: 0;
-    border-top: 0;
-    border-right: 0;
-    border-bottom: 1px solid #999;
-    outline: none;
-    background: transparent;
-}
-
-.submit-btn{
-    width: 85%;
-    padding: 10px;
-    cursor: pointer;
-    display: block;
-    margin: auto;
-    background: linear-gradient(to right, #80bfff, #0059b3);
-    border: 0;
-    outline: none;
-    border-radius: 30px;
-}
-
-.check-box{
-     float: left;
-     text-align: inherit;
-     margin:20px auto;
-}
-
- span{
-
-    color:#777;
-    font-size: 12px;
-    bottom: 60px;
-    position: relative;
-}
-
-
-#login{
-    left: 50px;
-}
-
-#register{
-    left: 450px;
-}
-
-#admin{
-    left: 850px;
-}
-
-/*-- end Authentification page--*/
-
-
 
 
 p {
@@ -777,13 +631,16 @@ th:last-child{
     top: 130px;
     transition: transform 1s;
 }
+
+
 form input{
-    width: 100%;
+   
     height: 30px;
     margin: 10px 0;
     padding: 0 10px;
     border: 1px solid  #1d588b;
 }
+
 form .btn{
     width: 100%;
     border: none;

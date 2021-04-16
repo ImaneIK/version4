@@ -20,14 +20,14 @@ $check_user="select * from users WHERE user_email='$user_email'";
     if(mysqli_num_rows($run_query)>0)
     {
 echo "<script>alert('Customer is already exist, Please try another one!')</script>";
- echo"<script>window.open('Account-page.php','_self')</script>";
+ echo"<script>window.open('Account-page1.php','_self')</script>";
 exit();
     }
  
 $saveaccount="insert into users (user_email,user_password,user_firstname,user_lastname,user_address) VALUE ('$user_email','$user_password','$user_firstname','$user_lastname','$user_address')";
 mysqli_query($dbcon,$saveaccount);
 echo "<script>alert('Data successfully saved, You may now login!')</script>";				
-echo "<script>window.open('home.php','_self')</script>";
+echo "<script>window.open('customer/home.php','_self')</script>";
 
 
 				

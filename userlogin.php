@@ -30,7 +30,7 @@ $_SESSION['user_email']=$user_email;
     else
     {
         echo "<script>alert('Email or password is incorrect!')</script>";
-		  echo "<script>window.open('Account-page.php','_self')</script>";
+		  echo "<script>window.open('Account-page1.php','_self')</script>";
 		
 		 exit();
 		

@@ -10,13 +10,14 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-BAZZAR</title>
+    <title>E-BAZZAR | Home</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Ballet&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;1,700&family=Ballet&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   
 </head>
 
 
@@ -29,23 +30,21 @@ session_start();
        
             <div class="navbar">
               <div class="logo">
-					<a class = "logo" href="home.php"><img src="img/logo1.png" width="200px"></a> 
-				</div>
+                    <a class = "logo" href="home.php" style="font-family: serif; font-weight: bold; font-size: 40px;">E-BAZZAR</a> 
+                </div>
                 <nav>
-				
+                
                     <ul>
                         <li><a href="home.php">Home</a></li>
                         <li><a href="products.php">Products</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Account</a></li>
+                        <li><a href="Cart.php">Cart</a></li>
                         <li><a href="logout.php">Log Out</a></li>
                         
                     </ul>
                     
                 </nav>
-              <a href="Cart.php"><img src="img/cart.png" width="29px" height="29px" class="cart"></a>
+             
             </div>
-
 
 
 
@@ -59,7 +58,7 @@ session_start();
                     <h1>A Journey to discover the treasures of a deep rooted culture...
                         <br>Morocco</h1>
                     <P>E-BAZZAR<br>An online shopping plateform that provides<br> traditional natural and 100% original products from all over Morocco....</P>
-                    <a href="" class="btn">Let's dive in &#8594; </a>
+                    <a href="#products" class="btn">Let's dive in &#8594; </a>
                 </div>
                 <div class="col-2">
                     <!-- <img src="img/zlijfassi.jpg" alt=""> -->
@@ -86,23 +85,23 @@ session_start();
                 <div id="CAT-ROw">
                 <div class="col-3">
                     <h4> Clothing</h4>
-                    <img src="img/clothing.jpg" alt="">
+                    <img src="../img/clothing.jpg" alt="">
                 </div>
                 <div class="col-3">
                     <h4>Accessories</h4>
-                    <img src="img/accessories.jpg" alt="">
+                    <img src="../img/accessories.jpg" alt="">
                 </div>
                 <div class="col-3">
                     <h4>Decor</h4>
-                    <img src="img/decor.jpg" alt="">
+                    <img src="../img/decor.jpg" alt="">
                 </div>
                  <div class="col-3">
                     <h4>Cosmetics</h4>
-                    <img src="img/cosmetic.jpg" alt="">
+                    <img src="../img/cosmetic.jpg" alt="">
                 </div>
                  <div class="col-3">
                     <h4>Nutrition</h4>
-                    <img src="img/nutrition.jpg" alt="">
+                    <img src="../img/nutrition.jpg" alt="">
                 </div>
             </div>
             </div>
@@ -118,11 +117,11 @@ session_start();
 
 
     <!----featured products-->
-    <div class="small-container">
+    <div class="small-container" id ="products">
         <h2 class="title">Featured products</h2>
         <div class="row">
             <div class="col-4">
-                <img src="img/Amlou Pistache 190g.jpg" >
+                <img src="../img/Amlou Pistache 190g.jpg" >
                 <h4 style="text-align: center;">Amlou Pistache 190g</h4>
                 <div class="rating">
                     <i class="fa fa-star"></i>
@@ -135,7 +134,7 @@ session_start();
             </div>
             <div class="col-4">
                 
-                <img src="img/Barebones Seagrass Market Tote with Linen Liner - Machine Washable, Long Over-the-Shoulder Straps.jpg" >
+                <img src="../img/Barebones Seagrass Market Tote with Linen Liner - Machine Washable, Long Over-the-Shoulder Straps.jpg" >
                 <h4 style="text-align: center;">Navy Blue Patterned Planter Ethical African Sisal Storage Basket</h4>
                 <div class="rating">
                     <i class="fa fa-star"></i>
@@ -147,7 +146,7 @@ session_start();
                 <p>75 DH</p>
             </div>
             <div class="col-4">
-                <img src="img/Lanterns.jpg" alt="">
+                <img src="../img/Lanterns.jpg" alt="">
                 <h4 style="text-align: center;">Silver hand-made lamp</h4>
                 <div class="rating">
                     <i class="fa fa-star"></i>
@@ -159,7 +158,7 @@ session_start();
                 <p>55 DH</p>
             </div>
             <div class="col-4">
-                <img src="img/Moroccan Berber Tribal Silver Cuff.jpg" alt="">
+                <img src="../img/Moroccan Berber Tribal Silver Cuff.jpg" alt="">
                 <h4 style="text-align: center;">Moroccan Berber Tribal Silver Cuff</h4>
                 <div class="rating">
                     <i class="fa fa-star"></i>
@@ -185,7 +184,7 @@ session_start();
         <h2 class="title">Latest Products</h2>
         <div class="row">
             <div class="col-1">
-                <img src="img/Organic-Argan-Oil.jpg" >
+                <img src="../img/Organic-Argan-Oil.jpg" >
                 <h4 style="text-align: center;">Organic Argan oil</h4>
                 <div class="rating">
                     <i class="fa fa-star"></i>
@@ -197,7 +196,7 @@ session_start();
                 <p>200 DH</p>
             </div>
             <div class="col-1">
-                <img src="img/Silver Earing.jpg" >
+                <img src="../img/Silver Earing.jpg" >
                 <h4 style="text-align: center;">Silver Earing</h4>
                 <div class="rating">
                     <i class="fa fa-star"></i>
@@ -209,7 +208,7 @@ session_start();
                 <p>2000 DH</p>
             </div>
             <div class="col-1">
-                <img src="img/Floral Dress.jpg" alt="">
+                <img src="../img/Floral Dress.jpg" alt="">
                 <h4 style="text-align: center;">Floral Dress</h4>
                 <div class="rating">
                     <i class="fa fa-star"></i>
@@ -221,7 +220,7 @@ session_start();
                 <p>890 DH</p>
             </div>
             <div class="col-1">
-                <img src="img/Babouch Slippers.jpg" alt="">
+                <img src="../img/Babouch Slippers.jpg" alt="">
                 <h4 style="text-align: center;">Babouch Slippers</h4>
                 <div class="rating">
                     <i class="fa fa-star"></i>
@@ -233,7 +232,7 @@ session_start();
                 <p>200 DH</p>
             </div>
             <div class="col-1">
-                <img src="img/tea-glass.png" alt="">
+                <img src="../img/tea-glass.png" alt="">
                 <h4 style="text-align: center;">Tea Glasses</h4>
                 <div class="rating">
                     <i class="fa fa-star"></i>
@@ -245,7 +244,7 @@ session_start();
                 <p>150 DH</p>
             </div>
             <div class="col-1">
-                <img src="img/Moroccan Glass Pendant Lantern.png" alt="">
+                <img src="../img/Moroccan Glass Pendant Lantern.png" alt="">
                 <h4 style="text-align: center;">Moroccan Glass Pendant Lantern</h4>
                 <div class="rating">
                     <i class="fa fa-star"></i>
@@ -257,7 +256,7 @@ session_start();
                 <p>5 DH</p>
             </div>
             <div class="col-1">
-                <img src="img/Seagrass & Cotton Belly Basket White_Natural.jpg" alt="">
+                <img src="../img/Seagrass & Cotton Belly Basket White_Natural.jpg" alt="">
                 <h4 style="text-align: center;">Belly Basket</h4>
                 <div class="rating">
                     <i class="fa fa-star"></i>
@@ -269,7 +268,7 @@ session_start();
                 <p>59 DH</p>
             </div>
             <div class="col-1">
-                <img src="img/olive oil.png" alt="">
+                <img src="../img/olive oil.png" alt="">
                 <h4 style="text-align: center;">Olive Oil 500ml</h4>
                 <div class="rating">
                     <i class="fa fa-star"></i>
@@ -301,7 +300,7 @@ session_start();
     <div class="small-container">
         <div class="row">
             <div class="offer-image">
-                <img src="img/Moroccan Lantern- Handcrafted - Turkish Lamp-Attractive Design- Hanging Home Decor Lamp - Black_Gold.jpg" class="offer-img">
+                <img src="../img/Moroccan Lantern- Handcrafted - Turkish Lamp-Attractive Design- Hanging Home Decor Lamp - Black_Gold.jpg" class="offer-img">
             </div>
             <div class="col-2">
                 <p>Exclusively Avaible on E-Bazzar </p>
@@ -335,7 +334,7 @@ session_start();
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                             </div>
-                           <img src="img/user-1.png" class="user">
+                           <img src="../img/user-1.png" class="user">
                            <h3> Sean Parker</h3>
                     </div>
                     <div class="col-5">
@@ -348,7 +347,7 @@ session_start();
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                             </div>
-                           <img src="img/user-2.png" class="user">
+                           <img src="../img/user-2.png" class="user">
                            <h3 style=" margin-left: 5.5vw;">Padma Lakshmi</h3>
                     </div>
                     <div class="col-5">
@@ -361,7 +360,7 @@ session_start();
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                             </div>
-                           <img src="img/user-3.png" class="user">
+                           <img src="../img/user-3.png" class="user">
                            <h3>Mark Foster</h3>
                     </div>
             </div>
@@ -369,23 +368,20 @@ session_start();
    </div>
 
 
-
-
-
    <div class="brands">
         <div class="small-container">
             <div class="row">
                   <div class="col-6">
-                        <img src="img/logo-coca-cola.png" alt="">
+                        <img src="../footage/logo-coca-cola.png" alt="">
                   </div>
                   <div class="col-6">
-                         <img src="img/logo-godrej.png" alt="">
+                         <img src="../footage/logo-godrej.png" alt="">
                   </div>
                   <div class="col-6">
-                         <img src="img/logo-paypal.png" alt="">
+                         <img src="../footage/logo-paypal.png" alt="">
                   </div>
                   <div class="col-6">
-                         <img src="img/logo-philips.png" alt="">
+                         <img src="../footage/logo-philips.png" alt="">
                   </div>
             </div>
         </div>
@@ -397,8 +393,8 @@ session_start();
                   <div class="footer-col" >
                       <h2 style="text-align: center; margin-top: 40px;">Download our app</h2>
                       <p class="footer-p" style="text-align: center; margin-top: 5px;">Download our app on Play Store and Google Play </p>
-                      <img src="img/app-store.png" class="footer-img" >
-                      <img src="img/play.png" class="footer-img">
+                      <img src="../footage/app-store.png" class="footer-img" >
+                      <img src="../footage/play.png" class="footer-img">
                   </div>
                   <div class="footer-col">
                       <br> <br>
@@ -409,9 +405,9 @@ session_start();
                     <br>
                     <br>
                     <h2 style="text-align: center;">Follow us</h2>
-                    <img class="footer-p" src="img/facebook_white.png">
-                    <img class="footer-p" src="img/twitter_white.png">
-                    <img class="footer-p" src="img/instagram_white.png">
+                    <img class="footer-p" src="../footage/facebook_white.png">
+                    <img class="footer-p" src="../footage/twitter_white.png">
+                    <img class="footer-p" src="../footage/instagram_white.png">
                 </div>
               </div>
                <div class="copyright text-center bg-dark text-white py-2" style="margin: 10px;">
@@ -419,7 +415,7 @@ session_start();
                 </div>
          </div>
     </footer>
-
+ <script type="text/javascript" src="../button_script.js"></script>
 </body>
 
 

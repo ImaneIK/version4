@@ -41,7 +41,7 @@ if(!$_SESSION['admin_username'])
 					
 		if($imgFile)
 		{
-			$upload_dir = 'img/'; // upload directory	
+			$upload_dir = '../img/'; // upload directory	
 			$imgExt = strtolower(pathinfo($imgFile,PATHINFO_EXTENSION)); // get image extension
 			$valid_extensions = array('jpeg', 'jpg', 'png', 'gif'); // valid extensions
 			$itempic = rand(1000,1000000).".".$imgExt;
@@ -114,19 +114,72 @@ if(!$_SESSION['admin_username'])
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-BAZZAR | Dashboard</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Ballet&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;1,700&family=Ballet&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style type="text/css">
+	*{
+    		padding: 0;
+    		margin: 0;
+    		
+    	}
+
+    	body{
+    		height: auto;
+    	}
+
+    	table thead tr th{
+    		background: #03a9f4;
+    	}
+
+
+    	.button{
+    		width: 100px;
+    		height: 40px;
+    		margin: 10px;
+    		padding: 5px;
+    		font-size: 17px;
+    		background: transparent;
+    		border: 2px solid #03a9f4;
+    		border-radius: 20px;
+    		color: #03a9f4;
+    	}
+
+    	input{
+    		margin: 10px;
+    		padding: 30px;
+    		font-size: 17px;
+    		background: transparent;
+    		border: 2px solid #03a9f4;
+    		border-radius: 5px;
+    		
+    	}
+
+    	label{
+    		font-size: 20px;
+    		margin: 10px;
+
+    	}
+
+    	form{
+    		width: 50%;
+    		margin: 20px;
+    	}
+
+    	
+
+</style>	
 
 </head>
 <body>
     <div id="wrapper">
         <div class="navbar">
               <div class="logo">
-          <a class = "logo" href="dashboard.php"><img src="img/logo1.png" width="200px"></a> 
+           <a class = "logo" href="dashboard.php" style="font-family: serif; font-weight: bold; font-size: 40px;">E-BAZZAR</a> 
         </div>
                 <nav>
         
@@ -144,18 +197,8 @@ if(!$_SESSION['admin_username'])
               
             </div>
 
-        <div id="page-wrapper">
-            
-			
-			
-			
-			
-			
-			
-			
-			
-		<div class="clearfix"></div>
 
+<center>
 <form method="post" enctype="multipart/form-data" class="form-horizontal">
 	
     
@@ -166,39 +209,36 @@ if(!$_SESSION['admin_username'])
         <?php
 	}
 	?>
-			 <div class="alert alert-info">
-                        
-                          <center> <h3><strong>Update Item</strong> </h3></center>
+			 <div>
+                 <center> <h3><strong>Update Item</strong> </h3></center>
+			</div>
 						  
-						  </div>
-						  
-						 <table class="table table-bordered table-responsive">
+			<table>
 	 
     <tr>
-    	<td><label class="control-label">Name of Item.</label></td>
-        <td><input class="form-control" type="text" name="item_name" value="<?php echo $item_name; ?>" required /></td>
+    	<td><label> <center>Name of the Item:  </center></label></td>
+        <td><input type="text" name="item_name" value="<?php echo $item_name; ?>" required /></td>
     </tr>
 	
 	 <tr>
-    	<td><label class="control-label">Price.</label></td>
-        <td><input id="inputprice" class="form-control" type="text" name="item_price" value="<?php echo $item_price; ?>" required /></td>
+    	<td><label> <center> Price: </center></label></td>
+        <td><input class="form-control" type="text" name="item_price" value="<?php echo $item_price; ?>" required /></td>
     </tr>
 	
 	
     <tr>
-    	<td><label class="control-label">Image.</label></td>
+    	:<td><label> <center> Image: </center></label></td>
         <td>
-        	<p><img class="img img-thumbnail" src="item_images/<?php echo $item_image; ?>" height="150" width="150" /></p>
-        	<input class="input-group" type="file" name="item_image" accept="image/*" />
+        	<p><img src="item_images/<?php echo $item_image; ?>" height="150" width="150" /></p>
+        	<input type="file" name="item_image" accept="image/*" />
         </td>
     </tr>
     
     <tr>
-        <td colspan="2"><button type="submit" name="btn_save_updates" class="btn btn-primary">
-        <span class="glyphicon glyphicon-save"></span> Update
-        </button>
+        <td>
+        <button type="submit" name="btn_save_updates" class="button">Update</button>
         
-        <a class="btn btn-danger" href="items.php"> <span class="glyphicon glyphicon-backward"></span> Cancel </a>
+        <a class="button" href="items.php">Cancel </a>
         
         </td>
     </tr>
@@ -207,45 +247,11 @@ if(!$_SESSION['admin_username'])
     
 </form>
 						  
-
+ </center>
                 </div>
-            </div>
 
-              <div class="modal-footer">
-               
-                <button class="btn btn-success btn-md" name="item_save">Save</button>
-				
-				 <button type="button" class="btn btn-danger btn-md" data-dismiss="modal">Cancel</button>
-				
-				
-				   </form>
-              </div>
-            </div>
-          </div>
-        </div>
+				  
 		
 		
-		
-	  	  <script>
-   
-    $(document).ready(function() {
-        $('#priceinput').keypress(function (event) {
-            return isNumber(event, this)
-        });
-    });
-  
-    function isNumber(evt, element) {
-
-        var charCode = (evt.which) ? evt.which : event.keyCode
-
-        if (
-            (charCode != 45 || $(element).val().indexOf('-') != -1) &&      
-            (charCode != 46 || $(element).val().indexOf('.') != -1) &&      
-            (charCode < 48 || charCode > 57))
-            return false;
-
-        return true;
-    }    
-</script>
 </body>
 </html>

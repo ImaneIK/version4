@@ -3,7 +3,7 @@
 	$DB_HOST = '127.0.0.1';
 	$DB_USER = 'root';
 	$DB_PASS = '';
-	$DB_NAME = 'edgedata';
+	$DB_NAME = 'magasin';
 	
 	try{
 		$DB_con = new PDO("mysql:host={$DB_HOST};dbname={$DB_NAME}",$DB_USER,$DB_PASS);

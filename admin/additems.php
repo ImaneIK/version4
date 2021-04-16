@@ -31,7 +31,7 @@ $imgFile = $_FILES['item_image']['name'];
 $tmp_dir = $_FILES['item_image']['tmp_name'];
 $imgSize = $_FILES['item_image']['size'];
 
-$upload_dir = 'img/';
+$upload_dir = '../img/';
 $imgExt = strtolower(pathinfo($imgFile,PATHINFO_EXTENSION)); 
 $valid_extensions = array('jpeg', 'jpg', 'png', 'gif'); 
 $itempic = rand(1000,1000000).".".$imgExt;
@@ -77,24 +77,71 @@ $itempic = rand(1000,1000000).".".$imgExt;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-BAZZAR | Dashboard</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Ballet&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;1,700&family=Ballet&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+
+    <style type="text/css">
+
+    	*{
+    		padding: 0;
+    		margin: 0;
+    		
+    	}
+
+    	body{
+    		height: 30vh;
+    	}
+
+
+    	.tab{
+    		width: 80%;
+    		
+    	}
+
+    	.block{
+    		margin: 60px auto;
+    		border: none
+    	}
+
+    	h2{
+    		padding: 50px auto;
+    		color:white
+    	}
+
+    	form fieldset p{
+    		margin: 20px;
+    		color: #fff;
+    		font-size: 30px;
+    	}
+
+    	button{
+    		margin: 20px;
+    		padding: 10px;
+    		font-size: 20px;
+    		background: transparent;
+    		border: 2px solid #fff;
+    		border-radius: 20px;
+    		color: #fff;
+    	}
+
+    </style>
+ </head>
+
+
 <body>
 
 
-	<div class="navbar">
+	 <div class="navbar">
               <div class="logo">
-          <a class = "logo" href="dashboard.php"><img src="img/logo1.png" width="200px"></a> 
+           <a class = "logo" href="dashboard.php" style="font-family: serif; font-weight: bold; font-size: 40px;">E-BAZZAR</a> 
         </div>
                 <nav>
         
                     <ul>
-                        <li><a href="dashboard.php">Home</a></li>
+                         <li><a href="dashboard.php">Home</a></li>
                         <li><a href="additems.php">upload items</a></li>
                         <li><a href="items.php">item management</a></li>
                         <li><a href="customers.php ">customer management</a></li>
@@ -107,40 +154,31 @@ $itempic = rand(1000,1000000).".".$imgExt;
               
             </div>
 
+
+
 	<!-- Mediul Modal -->
-        <div class="modal fade" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="myMediulModalLabel">
-          <div class="modal-dialog modal-md">
-            <div style="color:white;background-color:#008CBA" class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h2 style="color:white" class="modal-title" id="myModalLabel">Upload Items</h2>
+	<center>
+        <div class="tab" tabindex="-1" role="dialog" aria-labelledby="myMediulModalLabel">
+          <div class="block" >
+            <div style="color:white;background-color:#03a9f4">
+              <div >
+                <h2>Upload Items</h2>
               </div>
-              <div class="modal-body">
+              <div>
          
-				
-			
-				
 				 <form enctype="multipart/form-data" method="post" action="additems.php">
                    <fieldset>
 					
-						
                             <p>Name of Item:</p>
-                            <div class="form-group">
+                            <div>
 							
-                                <input class="form-control" placeholder="Name of Item" name="item_name" type="text" required>
-                           
-							 
+                                <input placeholder="Name of Item" name="item_name" type="text" required>
+                         
 							</div>
 							
 							
-							
-							
-							
-							
-							
-							
 							<p>Price:</p>
-                            <div class="form-group">
+                            <div>
 							
                                 <input id="priceinput" class="form-control" placeholder="Price" name="item_price" type="text" required>
                            
@@ -149,23 +187,21 @@ $itempic = rand(1000,1000000).".".$imgExt;
 							
 							
 							<p>Choose Image:</p>
-							<div class="form-group">
+							<div>
 						
-							 
                                 <input class="form-control"  type="file" name="item_image" accept="image/*" required/>
                            
 							</div>
-				   
 				   
 					 </fieldset>
                   
             
               </div>
-              <div class="modal-footer">
+              <div >
                
-                <button class="btn btn-success btn-md" name="item_save">Save</button>
+                <button name="item_save">Save</button>
 				
-				 <button type="button" class="btn btn-danger btn-md" data-dismiss="modal">Cancel</button>
+				 <button type="button" data-dismiss="modal">Cancel</button>
 				
 				
 				   </form>
@@ -173,6 +209,7 @@ $itempic = rand(1000,1000000).".".$imgExt;
             </div>
           </div>
         </div>
+        </center>
 		
 
 </body>
