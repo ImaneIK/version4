@@ -32,8 +32,7 @@ body {
 
 @keyframes image-BC
 {
-0% {background-image: url("b3.jpeg");}
-75% {background-image: url("b2.jpeg");}
+0% {background-image: url("b2.jpeg");}
 100% {background-image: url("b1.jpeg");}
 }
 
