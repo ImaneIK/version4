@@ -48,24 +48,22 @@ session_start();
               
             </div>
 
-             <div class="container">
-            <!-- image slider here -->
+            <div class="container">
+            <!-- <img src="img/Capture d’écran 2021-03-05 194043.png" alt=""> -->
             <div class="row">
                 <div class="col-2">
-                    <h1>A Journey to discover the treasures of a deep rooted culture...
-                        Morocco</h1>
-                    <P>E-BAZZAR<br>An online shopping plateform that provides<br> traditional natural and 100% original Products from all over Morocco....</P>
-                    
-                  <a href="#products" class="btn">Let's dive in &#8594; </a>
+                   <h1 id="h1-st">A Journey to discover the treasures of a deep rooted culture...
+                        <br>Morocco</h1>
+                    <p>E-BAZZAR<br>An online shopping plateform that provides<br> traditional natural and 100% original products from all over Morocco....</p>
+                    <a href="#products" class="btn">Let's dive in &#8594; </a>
                 </div>
-                
                 <div class="col-2">
-                   <img src="img/Some Pretty Thing.png" alt=""> 
-                </div> 
+                   <img src="" alt="">
+                </div>
 
             </div>
         </div>
-    </div>
+         </div>
 
 
 

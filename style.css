@@ -13,10 +13,49 @@ body {
 }
 
 .header{
-    height: 100vh;
-    padding: 10px;
-    background: radial-gradient(#FFFFFF, #99C8F4);
+ padding: 10px;
+ height: 100vh;
+ flex-direction: column;
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-position: center;
+ animation-name: image-BC;
+ animation-direction: alternate-reverse;
+ animation-duration:15s;
+ animation-fill-mode:both;
+ animation-iteration-count: infinite;
+ animation-play-state:running;
+ animation-timing-function: ease-in-out;
+ animation-delay: 1.5s;
 }
+
+
+@keyframes image-BC
+{
+0% {background-image: url("b3.jpeg");}
+75% {background-image: url("b2.jpeg");}
+100% {background-image: url("b1.jpeg");}
+}
+
+
+#h1-st{
+ color: rgb(0, 0, 0);
+ font-weight: 200px;
+ font-size:4em;
+ position: relative;
+ top: 100px;
+ margin-bottom: 15%;
+}
+
+
+#DescriptionText
+{
+ position: relative;
+ top:80px;
+ color: #020a11;
+}
+
+
 
 h1 {
     color: #4f506b;
@@ -49,16 +88,18 @@ nav ul {
 nav ul li {
     display: inline-block;
     margin-right: 20px;
+
 }
 
 a {
     text-decoration: none;
-    color: #333333;
+    color: black;
+    font-weight: 200px;
 }
 
 
 p {
-    color: #333333;
+    color: black;
 }
 
 .container {
@@ -79,8 +120,8 @@ p {
 .col-2 {
     flex-basis: 50%;
     width: 300px;
-    height: 300px;   
-     margin-bottom: 15%; 
+    height: 70vh;   
+    margin-bottom: 10%; 
 }
 
 
@@ -91,16 +132,16 @@ p {
     height: 50%;
    
 }
+
 img
 {
     max-width: 400px;
 }
 
 .col-2 h1 {
-    font-size: 70px;
+    font-size: 50px;
     line-height: 60px;
-    margin: 25px 0;
-    margin-left: 80px;
+    margin-left: 70px;
 }
 .col-2 p
 {
@@ -109,19 +150,26 @@ img
     font-size: 20px;
 }
 
+
 .btn {
-    display: inline-block;
-    background: #365E82;
-    color: rgb(255, 255, 255);
-    padding: 8px 30px;
-    margin: 30px 0;
-    border-radius: 30px;
-    margin-left: 90px;
-    font-size: 25px;
+ position: relative;
+ top: 0;
+ display: inline-block;
+ background: #99ccff;
+ color: black;
+ padding: 8px 30px;
+ margin: 30px 0;
+ border-radius: 30px;
+ margin-left: 90px;
+ font-size: 25px;
+}
+
+.btn a{
+	opacity: 0;
 }
 
 .btn:hover {
-    background: #94a1ff;
+    background: #4da6ff;
     transform: translateX(5%);
 }
 
